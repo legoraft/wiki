@@ -6,3 +6,14 @@ theme:
   hljs_languages:
     - rust
     - nginx
+
+Nav:
+  - 'index.md'
+  - 'about.md'
+  - 'Linux':
+    - 'debian.md'
+  - 'Command Line':
+    - 'mkvtoolnix.md'
+  - 'Servers':
+    - 'info.md'
+    - 'nginx.md'
