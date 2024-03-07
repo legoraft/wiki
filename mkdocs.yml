@@ -7,13 +7,13 @@ theme:
     - rust
     - nginx
 
-Nav:
-  - 'index.md'
-  - 'about.md'
+nav:
+  - Home: 'index.md'
+  - About: 'about.md'
   - 'Linux':
-    - 'debian.md'
+    - 'Debian': 'debian.md'
   - 'Command Line':
-    - 'mkvtoolnix.md'
+    - 'Mkvtoolnix': 'mkvtoolnix.md'
   - 'Servers':
-    - 'info.md'
-    - 'nginx.md'
+    - 'Info': 'info.md'
+    - 'Nginx': 'nginx.md'
