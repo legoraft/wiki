@@ -32,7 +32,11 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Build site
+        run: mkdocs build
+
+      - name: Deploy
+        uses: s0/git-publish-subdir-action@develop
         env:
           REPO: self
           BRANCH: gh-pages
-        run: mkdocs build
+          FOLDER: site
