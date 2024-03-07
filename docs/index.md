@@ -1,7 +1,5 @@
 # Home
 
-This is the homepage for my wiki. I have some hacky stuff and info on how to use the things I use daily.
+This wiki is mostly a personal way to store things I learn and find over time, without having to scour the web to find one thing I had found 2 years ago.
 
-Most of my hobbies are computer related, I have a minecraft server and run Linux on most of my machines. I recently started hosting jellyfin, so some of the things in this wiki relate to that.
-
-This wiki is hosted through github pages and works great. I want to test some stuff however.
+Most of my wiki is about linux and selfhosting, as I run linux on most of my personal machines and selfhost some services.
