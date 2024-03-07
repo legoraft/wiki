@@ -16,7 +16,7 @@ You can rename the extracted files by adjusting the name after the number. For e
 
 ## Mkvmerge
 
-With mkvmerge, you can merge files within an mkv container. It also has a `--identify` flag, which allows you to get track numbers you might use for [mkvmerge](/wiki/command-line/mkvtoolnix/#mkvextract) or mkvmerge itself. This can be done by running a simple command:
+With mkvmerge, you can merge files within an mkv container. It also has a `--identify` flag, which allows you to get track numbers you might use for [mkvextract](/wiki/command-line/mkvtoolnix/#mkvextract) or mkvmerge itself. This can be done by running a simple command:
 
 ```bash
 mkvmerge --identify <filename>
