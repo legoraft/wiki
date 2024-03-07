@@ -1,0 +1,8 @@
+site_name: Legoraft's wiki
+
+theme:
+  name: readthedocs
+  highlightjs: true
+  hljs_languages:
+    - rust
+    - nginx
