@@ -8,12 +8,12 @@ theme:
     - nginx
 
 nav:
-  - Home: 'index.md'
-  - About: 'about.md'
+  - Home: 'index'
+  - About: 'about'
   - 'Linux':
-    - 'Debian': 'debian.md'
+    - 'Debian': 'debian'
   - 'Command Line':
-    - 'Mkvtoolnix': 'mkvtoolnix.md'
+    - 'Mkvtoolnix': 'mkvtoolnix'
   - 'Servers':
-    - 'Info': 'info.md'
-    - 'Nginx': 'nginx.md'
+    - 'Info': 'info'
+    - 'Nginx': 'nginx'
