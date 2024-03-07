@@ -107,7 +107,7 @@
 <p>In this command, the numbers are the track numbers. You can get these with <a href="/wiki/command-line/mkvtoolnix/#mkvmerge">mkvmerge</a>. </p>
 <p>You can rename the extracted files by adjusting the name after the number. For example: <code>2:"Hello, world!.txt"</code> would generate a file that's called <code>Hello, world!.txt</code> from the mkv. Do keep an eye on the format of the files, because you can't really have videos with a <code>.txt</code> extension.</p>
 <h2 id="mkvmerge">Mkvmerge</h2>
-<p>With mkvmerge, you can merge files within an mkv container. It also has a <code>--identify</code> flag, which allows you to get track numbers you might use for <a href="/wiki/command-line/mkvtoolnix/#mkvextract">mkvmerge</a> or mkvmerge itself. This can be done by running a simple command:</p>
+<p>With mkvmerge, you can merge files within an mkv container. It also has a <code>--identify</code> flag, which allows you to get track numbers you might use for <a href="/wiki/command-line/mkvtoolnix/#mkvextract">mkvextract</a> or mkvmerge itself. This can be done by running a simple command:</p>
 <pre><code class="language-bash">mkvmerge --identify &lt;filename&gt;
 </code></pre>
 <p>To merge files with mkvmerge, you can use the <code>-o</code> flag to specify and output file and just add your files after.</p>
