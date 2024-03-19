@@ -16,11 +16,13 @@ On installing the package, a systemd service is started with nginx, so you can g
 
 ## Configuration
 
-To configure a reverse proxy with nginx, you need to add a file to the `sites-available` directory. This can be done as follows:
+To configure a reverse proxy with nginx, you need to add a file to the `conf.d` directory. This can be done as follows:
 
 ```bash
-sudo nano /etc/nginx/sites-available/example.conf
+sudo nano /etc/nginx/conf.d/example.conf
 ```
+
+> **Note:** In some tutorials the `sites-available` directory is used, this isn't a directory that is available on all distros, so use `conf.d` for distro-agnostic installations.
 
 You can name this file whatever you want, I mostly name them after the services they proxy.
 
