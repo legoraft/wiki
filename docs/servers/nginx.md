@@ -22,7 +22,8 @@ To configure a reverse proxy with nginx, you need to add a file to the `conf.d` 
 sudo nano /etc/nginx/conf.d/example.conf
 ```
 
-> **Note:** In some tutorials the `sites-available` directory is used, this isn't a directory that is available on all distros, so use `conf.d` for distro-agnostic installations.
+> **Note:**
+> In some tutorials the `sites-available` directory is used, this isn't a directory that is available on all distros, so use `conf.d` for distro-agnostic installations.
 
 You can name this file whatever you want, I mostly name them after the services they proxy.
 
