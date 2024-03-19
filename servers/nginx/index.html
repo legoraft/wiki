@@ -118,9 +118,12 @@
 </code></pre>
 <p>On installing the package, a systemd service is started with nginx, so you can go on to configuring your reverse proxy.</p>
 <h2 id="configuration">Configuration</h2>
-<p>To configure a reverse proxy with nginx, you need to add a file to the <code>sites-available</code> directory. This can be done as follows:</p>
-<pre><code class="language-bash">sudo nano /etc/nginx/sites-available/example.conf
+<p>To configure a reverse proxy with nginx, you need to add a file to the <code>conf.d</code> directory. This can be done as follows:</p>
+<pre><code class="language-bash">sudo nano /etc/nginx/conf.d/example.conf
 </code></pre>
+<blockquote>
+<p><strong>Note:</strong> In some tutorials the <code>sites-available</code> directory is used, this isn't a directory that is available on all distros, so use <code>conf.d</code> for distro-agnostic installations.</p>
+</blockquote>
 <p>You can name this file whatever you want, I mostly name them after the services they proxy.</p>
 <p>To configure your proxy you have to enter some lines to your file:</p>
 <pre><code class="language-nginx">server {
