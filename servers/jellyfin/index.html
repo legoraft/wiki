@@ -5,15 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../../img/favicon.ico" />
-    <title>Mkvtoolnix - Legoraft's wiki</title>
+    <title>Jellyfin - Legoraft's wiki</title>
     <link rel="stylesheet" href="../../css/theme.css" />
     <link rel="stylesheet" href="../../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Mkvtoolnix";
-        var mkdocs_page_input_path = "command-line/mkvtoolnix.md";
+        var mkdocs_page_name = "Jellyfin";
+        var mkdocs_page_input_path = "servers/jellyfin.md";
         var mkdocs_page_url = null;
       </script>
     
@@ -50,16 +50,10 @@
                 </li>
               </ul>
               <p class="caption"><span class="caption-text">Command line</span></p>
-              <ul class="current">
-                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Mkvtoolnix</a>
-    <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#mkvextract">Mkvextract</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#mkvmerge">Mkvmerge</a>
-    </li>
-    </ul>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../command-line/mkvtoolnix/">Mkvtoolnix</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../rename/">Rename</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../../command-line/rename/">Rename</a>
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">Linux</span></p>
@@ -73,12 +67,14 @@
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">Servers</span></p>
-              <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../../servers/info/">Info</a>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../info/">Info</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../servers/jellyfin/">Jellyfin</a>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Jellyfin</a>
+    <ul class="current">
+    </ul>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../servers/nginx/">Nginx</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../nginx/">Nginx</a>
                   </li>
               </ul>
       </div>
@@ -95,8 +91,8 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
-          <li class="breadcrumb-item">Command line</li>
-      <li class="breadcrumb-item active">Mkvtoolnix</li>
+          <li class="breadcrumb-item">Servers</li>
+      <li class="breadcrumb-item active">Jellyfin</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -105,31 +101,14 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="mkvtoolnix">Mkvtoolnix</h1>
-<p>Mkvtoolnix is a commandline tool which allows you to modify mkv files and extract from or merge other files with. I use mkvtoolnix to edit the movies that go into my media library. This is a quick overview of commands I use frequently.</p>
-<h2 id="mkvextract">Mkvextract</h2>
-<p>With mkvextract you can extract certain tracks from mkv files. The most simple usage of this is as follows:</p>
-<pre><code class="language-bash">mkvextract &lt;filename&gt; tracks 0:video 1:audio 2:subtitles
-</code></pre>
-<p>In this command, the numbers are the track numbers. You can get these with <a href="/wiki/command-line/mkvtoolnix/#mkvmerge">mkvmerge</a>. </p>
-<p>You can rename the extracted files by adjusting the name after the number. For example: <code>2:"Hello, world!.txt"</code> would generate a file that's called <code>Hello, world!.txt</code> from the mkv. Do keep an eye on the format of the files, because you can't really have videos with a <code>.txt</code> extension.</p>
-<h2 id="mkvmerge">Mkvmerge</h2>
-<p>With mkvmerge, you can merge files within an mkv container. It also has a <code>--identify</code> flag, which allows you to get track numbers you might use for <a href="/wiki/command-line/mkvtoolnix/#mkvextract">mkvextract</a> or mkvmerge itself. This can be done by running a simple command:</p>
-<pre><code class="language-bash">mkvmerge --identify &lt;filename&gt;
-</code></pre>
-<p>To merge files with mkvmerge, you can use the <code>-o</code> flag to specify and output file and just add your files after.</p>
-<pre><code class="language-bash">mkvmerge -o example-movie.mkv example-video.avi example-audio.ogg
-</code></pre>
-<p>You can also specify the language for a certain file, for example the previous command would be adjusted as follows:</p>
-<pre><code class="language-bash">mkvmerge -o example-movie.mkv example-video.avi --language 0:en example-audio.ogg
-</code></pre>
-<p>The language just uses a two character language code. You can do a lot more with mkvtoolnix, check out the full documentation on their <a href="https://mkvtoolnix.download/docs.html">site</a>.</p>
+                <h1 id="jellyfin">Jellyfin</h1>
+<p>Jellyfin is a media server which allows you to stream all your downloaded media. I use it to stream movies and series I have</p>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../../about/" class="btn btn-neutral float-left" title="About"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../rename/" class="btn btn-neutral float-right" title="Rename">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../info/" class="btn btn-neutral float-left" title="Info"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../nginx/" class="btn btn-neutral float-right" title="Nginx">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -152,10 +131,10 @@
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="../../about/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../info/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
-      <span><a href="../rename/" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../nginx/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
