@@ -1,5 +1,7 @@
 site_name: Legoraft's wiki
 
+site_url: https://legoraft.github.io/wiki
+
 theme:
   name: readthedocs
   highlightjs: true
