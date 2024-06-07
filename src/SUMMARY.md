@@ -1,6 +1,6 @@
 # Summary
 
-- [Home](./home.md)
+[Introduction](./intro.md)
 
 # Linux
 
