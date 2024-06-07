@@ -7,3 +7,4 @@ title = "Legoraft's wiki"
 
 [output.html]
 site-url = "/wiki/"
+mathjax-support = true
