@@ -1,0 +1,6 @@
+[book]
+authors = ["legoraft"]
+language = "en"
+multilingual = false
+src = "src"
+title = "Legoraft's wiki"
