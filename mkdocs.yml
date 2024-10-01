@@ -4,6 +4,21 @@ site_url: https://legoraft.com/wiki
 
 theme:
   name: material
+  palette:
+    - scheme: default
+      toggle:
+      icon: material/brightness-4
+      name: Switch to dark mode
+    
+    # Palette toggle for dark mode
+    - scheme: slate
+      toggle:
+      icon: material/brightness-7
+      name: Switch to light mode
+      
+    - primary: teal
+    - accent: light green
+
   highlightjs: true
   hljs_languages:
     - rust
