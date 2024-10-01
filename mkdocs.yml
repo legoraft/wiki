@@ -7,6 +7,8 @@ nav:
   - Tech:
       - tech/index.md
       - Void Linux: tech/void.md
+  - Homelab:
+      - homelab/index.md
 
 theme:
   name: material
