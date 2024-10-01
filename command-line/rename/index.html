@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://legoraft.github.io/wiki/command-line/rename/" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Rename - Legoraft's wiki</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Rename";
+        var mkdocs_page_input_path = "command-line/rename.md";
+        var mkdocs_page_url = "/wiki/command-line/rename/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/rust.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/nginx.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> Legoraft's wiki
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../about/">About</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Command line</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../mkvtoolnix/">Mkvtoolnix</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Rename</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#replace-string">Replace string</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#replace-characters">Replace characters</a>
+    </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Linux</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../linux/debian/">Debian</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Minecraft</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../minecraft/nether-portal/">Nether portals</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Servers</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../servers/info/">Info</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../servers/jellyfin/">Jellyfin</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../servers/nginx/">Nginx</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">Legoraft's wiki</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Command line</li>
+      <li class="breadcrumb-item active">Rename</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="rename">Rename</h1>
+<p>Rename is a commandline tool that let's you rename files in bulk. It isn't installed by default on most distributions, so you'll need to install the <code>rename</code> package for your distro.</p>
+<h2 id="replace-string">Replace string</h2>
+<p>It's syntax utilizes regex, which is quite easy to find out with <a href="https://regex101.com/">regex101</a>. To get simple find and replace functionality, you can use this command:</p>
+<pre><code class="language-bash">rename 's/foo/bar/g' *.txt
+</code></pre>
+<p>This command has a certain syntax after the <code>rename</code> command, which I'll break down:</p>
+<ul>
+<li><code>s</code> indicates that you're substituting</li>
+<li><code>foo</code> can be replaced by any string you'd want to search for</li>
+<li><code>bar</code> is the string that replaces <code>foo</code></li>
+<li><code>g</code> indicates that it won't stop after the first hit.</li>
+<li><code>*.txt</code> can be replaced by any filename or extension to filter the replacements.</li>
+</ul>
+<h2 id="replace-characters">Replace characters</h2>
+<p>Rename also has another mode with which you can replace characters or a string of characters. The syntax for this is as follows:</p>
+<pre><code class="language-bash">rename 'y/abc/xyz/g' *.txt
+</code></pre>
+<p>In this, the <code>y</code> indicates that you want to translate character for character. In this example, every "a" will be replaced by an "x", every "b" for a "y" and so on.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../mkvtoolnix/" class="btn btn-neutral float-left" title="Mkvtoolnix"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../linux/debian/" class="btn btn-neutral float-right" title="Debian">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../mkvtoolnix/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../../linux/debian/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

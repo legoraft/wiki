@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://legoraft.github.io/wiki/minecraft/nether-portal/" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Nether portals - Legoraft's wiki</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Nether portals";
+        var mkdocs_page_input_path = "minecraft/nether-portal.md";
+        var mkdocs_page_url = "/wiki/minecraft/nether-portal/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/rust.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/nginx.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> Legoraft's wiki
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../about/">About</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Command line</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../command-line/mkvtoolnix/">Mkvtoolnix</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../command-line/rename/">Rename</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Linux</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../linux/debian/">Debian</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Minecraft</span></p>
+              <ul class="current">
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Nether portals</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#2-in-1-portal">2-in-1 portal</a>
+    </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Servers</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../servers/info/">Info</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../servers/jellyfin/">Jellyfin</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../servers/nginx/">Nginx</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">Legoraft's wiki</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Minecraft</li>
+      <li class="breadcrumb-item active">Nether portals</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="nether-portals">Nether portals</h1>
+<p>Nether portals are used in Minecraft to travel between the nether and the overworld. In the nether every block traveled is 8 blocks horizontally, so you can use the nether to travel faster in the overworld.</p>
+<h2 id="2-in-1-portal">2-in-1 portal</h2>
+<p>Besides traveling fast, you can also do something funky with a nether portal: You can create a single portal that teleports you to two locations in the overworld. I've written this out in case it's ever helpful.</p>
+<p>So let's start with 2 portals at random locations in the overworld. We have a portal A at (ax, ay, az). We have a portal B at (bx, by, bz). We'd want to connect these with another portal in the nether.</p>
+<p>You also need the blocks on which you stand in the portal in the nether to access the portals in the overworld, so we have the following:</p>
+<ul>
+<li>Portal A <code>(ax, ay, az)</code></li>
+<li>Portal B <code>(bx, by, bz)</code></li>
+<li>Block access A (block N) <code>(nx, ny, nz)</code></li>
+<li>Block access B (block M) <code>(mx, my, mz)</code></li>
+</ul>
+<p>Your nether portal will link with the center portal in the nether if the following statements are true:</p>
+<pre><code>(8nx-ax)² + (ny-ay)² + (8nz-az)² &lt; (8nx-bx)² + (ny-by)² + (8nz-bz)²
+
+(8mx-bx)² + (my-by)² + (8mz-bz)² &lt; (8mx-ax)² + (my-ay)² + (8mz-az)²
+</code></pre>
+<p>In these equations it distills to N is closer to A than to B and M is closer to B than A. If you'd want to make the calculations simpler, you can try to have one coordinate to be the same, this way you can remove any statement with that coordinate in it.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../../linux/debian/" class="btn btn-neutral float-left" title="Debian"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../servers/info/" class="btn btn-neutral float-right" title="Info">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../../linux/debian/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../../servers/info/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

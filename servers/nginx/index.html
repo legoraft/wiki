@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://legoraft.github.io/wiki/servers/nginx/" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Nginx - Legoraft's wiki</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Nginx";
+        var mkdocs_page_input_path = "servers/nginx.md";
+        var mkdocs_page_url = "/wiki/servers/nginx/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/rust.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/nginx.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> Legoraft's wiki
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../about/">About</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Command line</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../command-line/mkvtoolnix/">Mkvtoolnix</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../command-line/rename/">Rename</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Linux</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../linux/debian/">Debian</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Minecraft</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../minecraft/nether-portal/">Nether portals</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Servers</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../info/">Info</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../jellyfin/">Jellyfin</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Nginx</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#configuration">Configuration</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#domain-name">Domain name</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#ssl-certificate">SSL certificate</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#set-up-cronjob">Set up cronjob</a>
+    </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">Legoraft's wiki</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Servers</li>
+      <li class="breadcrumb-item active">Nginx</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="nginx">Nginx</h1>
+<p>Nginx (pronounced engine-x) is a web server and reverse proxy, which I use to proxy my servers from my homelab.</p>
+<h2 id="installation">Installation</h2>
+<p>To set up nginx, you first need to install the <code>nginx</code> package. This package is probably just named nginx on most distros, but check it for yourself.</p>
+<p>To install Nginx on Debian, just use the following command:</p>
+<pre><code class="language-bash">sudo apt install nginx
+</code></pre>
+<p>On installing the package, a systemd service is started with nginx, so you can go on to configuring your reverse proxy.</p>
+<h2 id="configuration">Configuration</h2>
+<p>To configure a reverse proxy with nginx, you need to add a file to the <code>conf.d</code> directory. This can be done as follows:</p>
+<pre><code class="language-bash">sudo nano /etc/nginx/conf.d/example.conf
+</code></pre>
+<blockquote>
+<p><strong>Note:</strong>
+In some tutorials the <code>sites-available</code> directory is used, this isn't a directory that is available on all distros, so use <code>conf.d</code> for distro-agnostic installations.</p>
+</blockquote>
+<p>You can name this file whatever you want, I mostly name them after the services they proxy.</p>
+<p>To configure your proxy you have to enter some lines to your file:</p>
+<pre><code class="language-nginx">server {
+    listen 80;
+    listen [::]:80;
+    server_name subdomain.domain.tld
+
+    location / {
+        proxy_pass https://192.168.x.x:0000
+
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection &quot;upgrade&quot;;
+        proxy_set_header Host $host;
+
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_set_header X-Forwarded-Host $host;
+        proxy_set_header X-Forwarded-Port $server_port;
+    }
+}
+</code></pre>
+<p>Within this configuration, you have to adjust some parameters. First, you need to adjust your <code>server_name</code> to whatever domain or subdomain you have or want. You also need to adjust the <code>proxy_pass</code> to the local ip and port of the server you want to proxy.</p>
+<p>You can keep the other things the same, this needs to be added to every proxy.</p>
+<p>After configuring the reverse proxy, you can check the config and restarting nginx by running</p>
+<pre><code class="language-bash">sudo nginx -t
+sudo systemctl restart nginx
+</code></pre>
+<p>After restarting, you'd probably want to add an ssl certificate to use https on your proxy. This can be done easily and free with let's encrypt. Before you do that, however, you'd want to add an A record to your domain name.</p>
+<h2 id="domain-name">Domain name</h2>
+<p>To add a record to your domain name, go to your domain name provider and add an A record in the dns settings. This A record should point to your public IP and have the same domain name as you configured. </p>
+<p>You probably should also add an SRV record to point to the correct port, which can be somewhat different for different providers, so reference their documentation on that.</p>
+<h2 id="ssl-certificate">SSL certificate</h2>
+<p>To install let's encrypt on Debian, you can just use the following commands (check the package name for your distro):</p>
+<pre><code class="language-bash">sudo apt install certbot python-certbot-nginx
+</code></pre>
+<p>To acquire the certificate for the domain name you just chose for the reverse proxy you just need to run the following command:</p>
+<pre><code class="language-bash">sudo certbot --nginx -d subdomain.domain.tld
+</code></pre>
+<p>When running this you need to enter some information, after which your certificate will be set up.</p>
+<h2 id="set-up-cronjob">Set up cronjob</h2>
+<p>Certbot certificates expire every 90 days, so I always set up a cronjob to refresh my certificates. This is quite easy to do, just open the crontab file by entering:</p>
+<pre><code class="language-bash">crontab -e
+</code></pre>
+<p>Within the file enter the following line:</p>
+<pre><code class="language-cron">0 24 * * * /usr/bin/certbot renew --quiet
+</code></pre>
+<p>This line runs the command every 24 hours, and causes no extra output thanks to the <code>--quiet</code> flag.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../jellyfin/" class="btn btn-neutral float-left" title="Jellyfin"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../jellyfin/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
