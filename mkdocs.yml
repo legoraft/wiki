@@ -24,3 +24,8 @@ theme:
       
   features:
     - navigation.tabs
+    - navigation.expand
+    - navigation.path
+    - navigation.indexes
+    - navigation.top
+    
