@@ -4,9 +4,9 @@ site_url: https://legoraft.com/wiki
 
 nav:
   - Home: index.md
-  - Linux:
-      - linux/index.md
-      - Void Linux: linux/void.md
+  - Tech:
+      - tech/index.md
+      - Void Linux: tech/void.md
 
 theme:
   name: material
