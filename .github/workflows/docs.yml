@@ -33,6 +33,7 @@ jobs:
         with:
           packages: |
             mkdocs
+            mkdocs-material
 
       # Runs mkdocs build command to build site
       - name: Build site
