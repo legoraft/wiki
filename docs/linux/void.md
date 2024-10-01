@@ -40,4 +40,4 @@ Runit is the init system void linux uses. You can use it to run certain applicat
 
 #### Starting, stopping and status
 
-You can start and stop services and get their status with the `sv` command. 
+You can start and stop services and get their status with the `sv` command. This can be done by running `sv start/restart/stop/status <service>`. Where service can be the full path, like `/var/service/<service>` or the service name, like `dbus`.
