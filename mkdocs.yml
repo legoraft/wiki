@@ -29,3 +29,9 @@ theme:
     - navigation.indexes
     - navigation.top
     
+extra:
+  social:
+    - icon: fontawesome/brands/mastodon 
+      link: https://mastodon.social/@legoraft
+    - icon: fontawesome/brands/github
+      link: https://github.com/legoraft
