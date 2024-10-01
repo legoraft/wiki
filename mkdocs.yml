@@ -5,8 +5,9 @@ site_url: https://legoraft.com/wiki
 nav:
   - Home: index.md
   - Tech:
-      - tech/index.md
-      - Void Linux: tech/void.md
+      - Linux:
+        - linux/index.md
+        - Void Linux: linux/void.md
   - Homelab:
       - homelab/index.md
 
@@ -38,6 +39,7 @@ theme:
     - navigation.path
     - navigation.indexes
     - navigation.top
+    - navigation.sections
     
 extra:
   social:
