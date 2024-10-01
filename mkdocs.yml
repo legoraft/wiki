@@ -2,6 +2,12 @@ site_name: Legoraft's wiki
 
 site_url: https://legoraft.com/wiki
 
+nav:
+  - Home: index.md
+  - Linux:
+      - linux/index.md
+      - Void Linux: linux/void.md
+
 theme:
   name: material
   palette:
