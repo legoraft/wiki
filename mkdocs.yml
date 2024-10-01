@@ -3,7 +3,7 @@ site_name: Legoraft's wiki
 site_url: https://legoraft.com/wiki
 
 theme:
-  name: readthedocs
+  name: material
   highlightjs: true
   hljs_languages:
     - rust
