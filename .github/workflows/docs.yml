@@ -11,6 +11,12 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
+# Adds permissions to build site
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
@@ -38,6 +44,7 @@ jobs:
         with:
           path: ./site
 
+  # Building github pages site
   deploy:
     environment:
       name: github-pages
