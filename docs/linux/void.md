@@ -10,16 +10,16 @@ The xbps package manager is the native package manager in Void Linux. It allows 
 
 To install packages, you use the `xbps-install <package>` command. You can append multiple packages, by separating them by a space. This means that installing `gimp` and `firefox` can be done with the following:
 
-```bash
-xbps-install gimp firefox
+```
+# xbps-install gimp firefox
 ```
 
 #### Updating
 
 The update command is really simple, you just use the `xbps-install` command with a few flags. The full command looks like this:
 
-```bash
-xbps-install -Su
+```
+# xbps-install -Su
 ```
 
 The `S` flag synchronizes the remote repositories, where the `u` flag updates all installed packages to the greatest version in the repositories.
@@ -28,15 +28,27 @@ The `S` flag synchronizes the remote repositories, where the `u` flag updates al
 
 Removing packages can be done with the `xbps-remove <package>` command. To also remove the dependencies that aren't used by other packages, use the `R` flag. To remove orphan dependencies, you can use the `o` flag. The full remove command would look like this:
 
-```bash
-xbps-remove -Ro
+```
+# xbps-remove -Ro
 ```
 
 ## Runit
 
 Runit is the init system void linux uses. You can use it to run certain applications as daemons in the background. It has the same functionality as systemd, but it's a lot smaller and faster.
 
-#### Enabling a service
+#### Enabling and disabling
+
+All daemons for services you've downloaded, are stored in `/etc/sv/<service>`. To enable a service, you create a symbolic link between this directory and `/var/service`. This can be done with the following command:
+
+```
+# ln -s /etc/sv/<service> /var/service/
+```
+
+To disable the service, you just have to remove the link. This can be done with the `rm` command.
+
+```
+# rm /var/service/<service>
+```
 
 #### Starting, stopping and status
 
@@ -44,6 +56,6 @@ You can start and stop services and get their status with the `sv` command. This
 
 If you want to check the status of all services currently you can use the following command:
 
-```bash
-sv status /var/service/*
+```
+# sv status /var/service/*
 ```
