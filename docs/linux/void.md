@@ -2,9 +2,33 @@
 
 Void linux is an independent distribution, which uses the `runit` init system and the `xbps` package manager. It's a rolling release, allowing you to have the most recent packages. I try to document all the information on void linux here in a clean and clear manner.
 
-## Installation
+### Installation
 
-To install Void Linux, a simple install script is provided.
+To install Void Linux, you need to have a valid install medium and boot into the drive. After the boot, you can log in with the username `root` and the password `voidlinux`. The simplest way to start the installation is by using the script. You can start the script by running `void-installer`.
+
+Most of the installer is quite straightforward. There are a few things that are smart to select during install, documented here.
+
+#### Source
+
+In Source, you configure the installation source of the packages. If you want the most up-to-date packages, select network install.
+
+#### Root
+
+It's best to avoid a root user, it isn't that secure and an admin account is enough for administrator rights.
+
+#### Partitioning
+
+The easiest tool for doing the partitioning is `cgdisk`. For UEFI systems, it's best to create a `gpt` partition table. The partitions you should create are as follows:
+
+- An EFI partition with the `EFI System` type. This partition should be between 200MB and 1GB.
+- If you have low RAM, you can also add a swap partition. Refer to the table to select your swap amount. This partition can be `Linux Filesystem`.
+- For the rest of the filesystem, you should partition the rest of the available space. This partition also should have the `Linux Filesystem` type.
+
+| RAM   | Swap amount  |
+| ----- | ------------ |
+| < 2GB | 2x RAM       |
+| 2-8GB | Same as RAM  |
+| 8GB+  | At least 4GB |
 
 ## XBPS
 
