@@ -32,7 +32,7 @@ Removing packages can be done with the `xbps-remove <package>` command. To also 
 # xbps-remove -Ro
 ```
 
-## Runit
+### Runit
 
 Runit is the init system void linux uses. You can use it to run certain applications as daemons in the background. It has the same functionality as systemd, but it's a lot smaller and faster.
 
