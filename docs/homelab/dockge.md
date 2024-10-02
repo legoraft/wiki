@@ -16,3 +16,9 @@ curl "https://dockge.kuma.pet/compose.yaml?port=5001&stacksPath=%2Fopt%2Fstacks"
 ```
 
 Run the compose file by running `docker compose up -d`. After this, you can access your dockge instance on port `5001`.
+
+## Usage
+
+After installing dockge, you can create an account within the web interface.
+
+You can create images by clicking 'compose' and entering a name, a compose file on the right and selecting the correct env variables. You can also enter a `docker run` command and convert it to a compose file.
