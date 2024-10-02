@@ -2,7 +2,7 @@
 
 Void linux is an independent distribution, which uses the `runit` init system and the `xbps` package manager. It's a rolling release, allowing you to have the most recent packages. I try to document all the information on void linux here in a clean and clear manner.
 
-### Installation
+## Installation
 
 To install Void Linux, you need to have a valid install medium and boot into the drive. After the boot, you can log in with the username `root` and the password `voidlinux`. The simplest way to start the installation is by using the script. You can start the script by running `void-installer`.
 
