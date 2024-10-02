@@ -12,6 +12,8 @@ nav:
   - Homelab:
       - homelab/index.md
       - Docker: homelab/docker.md
+      - Applications:
+        - homelab/dockge.md
 
 theme:
   name: material
