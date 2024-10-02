@@ -2,7 +2,11 @@
 
 Void linux is an independent distribution, which uses the `runit` init system and the `xbps` package manager. It's a rolling release, allowing you to have the most recent packages. I try to document all the information on void linux here in a clean and clear manner.
 
-### XBPS
+## Installation
+
+To install Void Linux, a simple install script is provided.
+
+## XBPS
 
 The xbps package manager is the native package manager in Void Linux. It allows you to install, query and remove packages.
 
@@ -32,7 +36,7 @@ Removing packages can be done with the `xbps-remove <package>` command. To also 
 # xbps-remove -Ro
 ```
 
-### Runit
+## Runit
 
 Runit is the init system void linux uses. You can use it to run certain applications as daemons in the background. It has the same functionality as systemd, but it's a lot smaller and faster.
 
