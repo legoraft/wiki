@@ -10,6 +10,7 @@ nav:
         - Void Linux: linux/void.md
   - Homelab:
       - homelab/index.md
+      - Docker: homelab/docker.md
 
 theme:
   name: material
