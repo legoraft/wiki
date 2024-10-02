@@ -30,6 +30,10 @@ The easiest tool for doing the partitioning is `cgdisk`. For UEFI systems, it's 
 | 2-8GB | Same as RAM  |
 | 8GB+  | At least 4GB |
 
+#### Mounting
+
+Mounting the partitions is also something that should be done in the correct way. Your EFI partition should have the `vfat` filesystem and be mounted at `/boot/efi`. The swap partition should have the `swap` filesystem, which is enough. The general file system should have the `ext4` filesystem and be mounted at `/`.
+
 ## XBPS
 
 The xbps package manager is the native package manager in Void Linux. It allows you to install, query and remove packages.
