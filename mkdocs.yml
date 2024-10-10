@@ -8,7 +8,9 @@ nav:
       - Linux:
         - linux/index.md
         - Void Linux: linux/void.md
-        - Post Install: linux/post-install.md
+        - Post install: linux/post-install.md
+      - Applications:
+        - applications/zsh.md
   - Homelab:
       - homelab/index.md
       - Docker: homelab/docker.md
