@@ -48,3 +48,11 @@ You also download the `docker-compose-plugin` with this, so you can immediately 
 ```
 sudo usermod -aG docker <user>
 ```
+
+## Usage
+
+To use docker, I prefer docker compose. This allows you to run full stacks in a single container and a lot of programs also supply a docker compose file. My preferred way of running docker compose is through [dockge](/dockge.md), which also allows you to convert run commands into compose files.
+
+To use compose, create a directory for your new application using `mkdir`. Go into that directory and copy over your compose file into a `compose.yml` file. To run your container you can run `docker compose up`. To run it as a daemon, you can use the `-d` flag.
+
+You can also start, stop and restart you container with `docker compose start`, `docker compose stop` and `docker compose restart` respectively. If you need to update the compose file, make sure to also run `docker compose down`, before running `docker compose up` again. This fully restarts the container.
