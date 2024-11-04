@@ -10,6 +10,7 @@ nav:
         - Post install: linux/post-install.md
       - Applications:
         - applications/zsh.md
+        - applications/stow.md
   - Homelab:
       - homelab/index.md
       - Docker: homelab/docker.md
